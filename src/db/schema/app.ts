@@ -3,7 +3,7 @@ import {release} from "node:os";
 import {relations} from "drizzle-orm";
 
 const timestamps = {
-    createdAT: timestamp('created_at').defaultNow().notNull(),
+    createdAt: timestamp('created_at').defaultNow().notNull(),
     updatedAt: timestamp('updated_at').defaultNow().$onUpdate(() => new Date()).notNull()
 }
 
