@@ -2,11 +2,15 @@ import express from 'express';
 import cors from 'cors';
 
 import subjectRouter from "./routes/subject";
+import securityMiddleware from "./middleware/security";
 
 const app = express();
 const port = 5555;
 
 app.use(express.json());
+
+app.use(securityMiddleware)
+
 app.use(cors({
     origin: process.env.FRONTEND_URL,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
