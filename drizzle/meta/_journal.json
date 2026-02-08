@@ -8,6 +8,13 @@
       "when": 1769408557861,
       "tag": "0000_broken_speed_demon",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1770535522053,
+      "tag": "0001_aromatic_gorgon",
+      "breakpoints": true
     }
   ]
 }
