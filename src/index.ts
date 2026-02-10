@@ -1,8 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 
-import subjectRouter from "./routes/subject";
-import securityMiddleware from "./middleware/security";
+import subjectRouter from "./routes/subject.js";
+import securityMiddleware from "./middleware/security.js";
 import {auth} from "./lib/auth";
 import {toNodeHandler} from "better-auth/node";
 
