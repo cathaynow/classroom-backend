@@ -1,6 +1,8 @@
-import {Request, Response, NextFunction} from "express";
-import aj from '../config/arcjet'
-import {ArcjetNodeRequest, slidingWindow} from "@arcjet/node";
+import {slidingWindow} from "@arcjet/node";
+import type {ArcjetNodeRequest} from "@arcjet/node";
+import type {NextFunction, Request, Response} from "express";
+import aj from "../config/arcjet";
+
 
 const securityMiddleware = async (req: Request, res: Response, next: NextFunction) => {
     if (process.env.NODE_ENV === "test") return next()
@@ -55,7 +57,7 @@ const securityMiddleware = async (req: Request, res: Response, next: NextFunctio
         }
 
         if (!decision.isDenied() && decision.reason.isRateLimit()) {
-            return res.status(403).json({error: 'Too many requests.', message})
+            return res.status(429).json({error: 'Too many requests.', message})
         }
 
     } catch (e) {
